@@ -5,8 +5,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 public class UserProfile {
-    private UUID UserProfileId;
-    private String username;
+    private final UUID UserProfileId;
+    private final String username;
     private String userProfileImageLink;//s3 Key
 
     public UserProfile(UUID userProfileId, String username, String userProfileImageLink) {
@@ -20,17 +20,11 @@ public class UserProfile {
         return UserProfileId;
     }
 
-    public void setUserProfileId(UUID userProfileId) {
-        UserProfileId = userProfileId;
-    }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public Optional<String> getUserProfileImageLink() {
         return Optional.ofNullable(userProfileImageLink);
@@ -47,6 +41,8 @@ public class UserProfile {
         return Objects.equals(UserProfileId, that.UserProfileId) &&
                 Objects.equals(username, that.username) &&
                 Objects.equals(userProfileImageLink, that.userProfileImageLink);
+        /*Objects.equals is used to check if any of the objects are null
+        * this will resolve any issues in the case null is passed */
     }
 
     @Override

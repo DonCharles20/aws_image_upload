@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AwsImageUploadApplication {
+public class AwsImageUpload {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AwsImageUploadApplication.class, args);
+		System.setProperty("aws.java.v1.disableDeprecationAnnouncement", "true");
+		SpringApplication.run(AwsImageUpload.class, args);
 	}
 
 }
