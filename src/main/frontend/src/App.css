@@ -42,8 +42,8 @@
 }
 
 img{
-width:300;
+width:300px;
 height:300px;
-object-fit: 300px;
+object-fit: cover;
 border-radius: 50%
 }
